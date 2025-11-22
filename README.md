@@ -97,19 +97,19 @@ Dockerfile: Imagem customizada do PHP com extensões.
 
 ## Backend (Laravel):
 
-app/Models/Category.php: Lógica de relacionamento recursivo e booted() para deleção em cascata.
+`app/Models/Categoria.php`: Lógica de relacionamento recursivo e booted() para deleção em cascata.
 
-app/Http/Controllers/CategoryController.php: API para CRUD e carregamento da árvore (children.children...).
+`app/Http/Controllers/CategoriaController.php`: API para CRUD e carregamento da árvore (children.children...).
 
-app/Http/Controllers/AuthController.php: Lógica de Login/Registro manual.
+`app/Http/Controllers/AuthController.php`: Lógica de Login/Registro manual.
 
-routes/web.php: Rotas de autenticação e da API (protegidas por sessão).
+`routes/web.php`: Rotas de autenticação e da API (protegidas por sessão).
 
 ## Frontend (Vue.js + Blade):
 
-resources/views/index.blade.php: Aplicação Vue principal. Contém todo o código do frontend, incluindo o componente recursivo <tree-item> e a lógica do Axios.
+`resources/views/index.blade.php`: Aplicação Vue principal. Contém todo o código do frontend, incluindo o componente recursivo <tree-item> e a lógica do Axios.
 
-resources/views/auth/*.blade.php: Telas de Login e Registro.
+`resources/views/auth/*.blade.ph`p: Telas de Login e Registro.
 
 ## Solução de Problemas Comuns
 
