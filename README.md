@@ -6,7 +6,7 @@ Uma aplicação web Fullstack para gerenciamento de categorias e subcategorias c
 
 Backend: PHP 8.2, Laravel 11
 
-Frontend: Vue.js 3 (Composition API), Tailwind CSS
+Frontend: Vue.js 3, Tailwind CSS
 
 Banco de Dados: MySQL 8.0
 
@@ -16,7 +16,7 @@ Infraestrutura: Docker & Docker Compose (Nginx, PHP-FPM, MySQL)
 
 Autenticação Completa: Login, Registro e Logout utilizando Sessões do Laravel.
 
-Árvore Recursiva: Visualização de categorias e subcategorias em n-níveis.
+Árvore Recursiva: Visualização de categorias e subcategorias em *n*-níveis.
 
 ## CRUD Hierárquico:
 
@@ -40,7 +40,7 @@ Não é necessário ter PHP, Composer ou Node.js instalados na máquina local.
 
 Siga os passos abaixo para iniciar a aplicação do zero:
 
-1. Configuração do Ambiente
+**1. Configuração do Ambiente**
 
 Certifique-se de que o arquivo .env na raiz do projeto está configurado corretamente para o Docker:
 
@@ -57,7 +57,7 @@ DB_CONNECTION=mysql
 `DB_PASSWORD=admin`
 
 
-2. Subir os Containers
+**2. Subir os Containers**
 
 Na raiz do projeto, execute:
 
@@ -66,7 +66,7 @@ Na raiz do projeto, execute:
 
 Isso irá construir as imagens do PHP e Nginx e iniciar o banco de dados MySQL.
 
-3. Instalar Dependências (Primeira vez)
+**3. Instalar Dependências (Primeira vez)**
 
 Se você acabou de clonar o projeto e não tem a pasta vendor, instale as dependências do Laravel:
 
@@ -91,25 +91,25 @@ Os arquivos principais modificados neste projeto são:
 
 ## Infraestrutura:
 
-docker-compose.yml: Orquestração dos serviços.
+`docker-compose.yml`: Orquestração dos serviços.
 
-Dockerfile: Imagem customizada do PHP com extensões.
+`Dockerfile`: Imagem customizada do PHP com extensões.
 
 ## Backend (Laravel):
 
-app/Models/Category.php: Lógica de relacionamento recursivo e booted() para deleção em cascata.
+`app/Models/Categoria.php`: Lógica de relacionamento recursivo e booted() para deleção em cascata.
 
-app/Http/Controllers/CategoryController.php: API para CRUD e carregamento da árvore (children.children...).
+`app/Http/Controllers/CategoriaController.php`: API para CRUD e carregamento da árvore (children.children...).
 
-app/Http/Controllers/AuthController.php: Lógica de Login/Registro manual.
+`app/Http/Controllers/AuthController.php`: Lógica de Login/Registro manual.
 
-routes/web.php: Rotas de autenticação e da API (protegidas por sessão).
+`routes/web.php`: Rotas de autenticação e da API (protegidas por sessão).
 
 ## Frontend (Vue.js + Blade):
 
-resources/views/index.blade.php: Aplicação Vue principal. Contém todo o código do frontend, incluindo o componente recursivo <tree-item> e a lógica do Axios.
+`resources/views/index.blade.php`: Aplicação Vue principal. Contém todo o código do frontend, incluindo o componente recursivo <tree-item> e a lógica do Axios.
 
-resources/views/auth/*.blade.php: Telas de Login e Registro.
+`resources/views/auth/*.blade.ph`p: Telas de Login e Registro.
 
 ## Solução de Problemas Comuns
 
