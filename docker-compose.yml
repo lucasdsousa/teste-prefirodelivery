@@ -25,10 +25,12 @@ services:
     container_name: laravel-mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: laravel_crud
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
-      MYSQL_USER: root
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
     ports:
