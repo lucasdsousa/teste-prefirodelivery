@@ -91,9 +91,9 @@ Os arquivos principais modificados neste projeto são:
 
 ## Infraestrutura:
 
-docker-compose.yml: Orquestração dos serviços.
+`docker-compose.yml`: Orquestração dos serviços.
 
-Dockerfile: Imagem customizada do PHP com extensões.
+`Dockerfile`: Imagem customizada do PHP com extensões.
 
 ## Backend (Laravel):
 
