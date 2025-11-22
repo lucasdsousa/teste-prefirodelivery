@@ -6,7 +6,7 @@ Uma aplicação web Fullstack para gerenciamento de categorias e subcategorias c
 
 Backend: PHP 8.2, Laravel 11
 
-Frontend: Vue.js 3 (Composition API), Tailwind CSS
+Frontend: Vue.js 3, Tailwind CSS
 
 Banco de Dados: MySQL 8.0
 
@@ -16,7 +16,7 @@ Infraestrutura: Docker & Docker Compose (Nginx, PHP-FPM, MySQL)
 
 Autenticação Completa: Login, Registro e Logout utilizando Sessões do Laravel.
 
-Árvore Recursiva: Visualização de categorias e subcategorias em n-níveis.
+Árvore Recursiva: Visualização de categorias e subcategorias em *n*-níveis.
 
 ## CRUD Hierárquico:
 
