@@ -1,5 +1,4 @@
 services:
-  # 1. Aplicação PHP (Laravel)
   app:
     build:
       context: .
@@ -19,7 +18,6 @@ services:
     depends_on:
       - db
 
-  # 2. Servidor Web (Nginx)
   webserver:
     image: nginx:alpine
     container_name: laravel-nginx
@@ -34,7 +32,6 @@ services:
     depends_on:
       - app
 
-  # 3. Banco de Dados (MySQL)
   db:
     image: mysql:8.0
     container_name: laravel-mysql
@@ -49,7 +46,7 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
     ports:
-      - "3306:3306" # Opcional: para acessar via Workbench/DBeaver localmente
+      - "3306:3306"
     networks:
       - laravel
 
