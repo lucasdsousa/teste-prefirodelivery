@@ -21,9 +21,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
+
 WORKDIR /var/www
 
 COPY --chown=$user:$user . .
 
 USER $user
+
+RUN composer install --no-dev --optimize-autoloader
+
 CMD ["php-fpm"]
