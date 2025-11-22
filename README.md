@@ -40,7 +40,7 @@ Não é necessário ter PHP, Composer ou Node.js instalados na máquina local.
 
 Siga os passos abaixo para iniciar a aplicação do zero:
 
-1. Configuração do Ambiente
+**1. Configuração do Ambiente**
 
 Certifique-se de que o arquivo .env na raiz do projeto está configurado corretamente para o Docker:
 
@@ -57,7 +57,7 @@ DB_CONNECTION=mysql
 `DB_PASSWORD=admin`
 
 
-2. Subir os Containers
+**2. Subir os Containers**
 
 Na raiz do projeto, execute:
 
@@ -66,7 +66,7 @@ Na raiz do projeto, execute:
 
 Isso irá construir as imagens do PHP e Nginx e iniciar o banco de dados MySQL.
 
-3. Instalar Dependências (Primeira vez)
+**3. Instalar Dependências (Primeira vez)**
 
 Se você acabou de clonar o projeto e não tem a pasta vendor, instale as dependências do Laravel:
 
