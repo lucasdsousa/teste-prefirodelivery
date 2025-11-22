@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.2-apache
 
 ARG user=laravel
 ARG uid=1000
@@ -16,6 +16,12 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
+RUN a2enmod rewrite
+
+ENV APACHE_DOCUMENT_ROOT /var/www/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
@@ -26,9 +32,7 @@ WORKDIR /var/www
 
 COPY --chown=$user:$user . .
 
-USER root
-RUN chown -R $user:$user /var/www
+RUN chown -R $user:www-data /var/www && \
+    chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 RUN composer install --no-dev --optimize-autoloader
-
-CMD ["php-fpm"]
