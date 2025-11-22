@@ -26,7 +26,8 @@ WORKDIR /var/www
 
 COPY --chown=$user:$user . .
 
-USER $user
+USER root
+RUN chown -R $user:$user /var/www
 
 RUN composer install --no-dev --optimize-autoloader
 
